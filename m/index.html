@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Metallurgical Engineering | Government Polytechnic, Visakhapatnam</title>
+    <meta name="description"
+        content="Explore the Department of Metallurgical Engineering at Government Polytechnic, Visakhapatnam - providing quality diploma education in physical metallurgy, mineral dressing, and foundry technologies.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Background Canvas for Spark Particles -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="app-header">
+        <div class="logo-container">
+            <div class="crystal-logo">
+                <div class="lattice-node top"></div>
+                <div class="lattice-node bottom-left"></div>
+                <div class="lattice-node bottom-right"></div>
+                <div class="lattice-node center"></div>
+                <svg class="lattice-lines" viewBox="0 0 100 100">
+                    <line x1="50" y1="15" x2="15" y2="75" stroke="currentColor" stroke-width="2" />
+                    <line x1="50" y1="15" x2="85" y2="75" stroke="currentColor" stroke-width="2" />
+                    <line x1="15" y1="75" x2="85" y2="75" stroke="currentColor" stroke-width="2" />
+                    <line x1="50" y1="15" x2="50" y2="50" stroke="currentColor" stroke-width="1.5"
+                        stroke-dasharray="2 2" />
+                    <line x1="15" y1="75" x2="50" y2="50" stroke="currentColor" stroke-width="1.5"
+                        stroke-dasharray="2 2" />
+                    <line x1="85" y1="75" x2="50" y2="50" stroke="currentColor" stroke-width="1.5"
+                        stroke-dasharray="2 2" />
+                </svg>
+            </div>
+            <div class="brand-text">
+                <h1>METALLURGICAL ENGG</h1>
+                <span>GOVERNMENT POLYTECHNIC VISAKHAPATNAM</span>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <nav class="nav-bar" id="main-nav">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#about" class="nav-link">About Us <i data-lucide="chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about?tab=department">The Department</a></li>
+                        <li><a href="#about?tab=college">The College</a></li>
+                        <li><a href="#about?tab=courses">Courses Offered</a></li>
+                        <li><a href="#about?tab=objectives">Objectives</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#faculty" class="nav-link">People <i data-lucide="chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#faculty?role=principal">Principal Profile</a></li>
+                        <li><a href="#faculty?role=hod">HOD Profile</a></li>
+                        <li><a href="#faculty?role=professors">Faculty Members</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#labs" class="nav-link">Laboratories <i data-lucide="chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#labs?id=1">Physical Metallurgy</a></li>
+                        <li><a href="#labs?id=2">Mechanical Testing</a></li>
+                        <li><a href="#labs?id=3">Heat Treatment & Pyrometallurgical</a></li>
+                        <li><a href="#labs?id=4">Advanced Characterization</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#students" class="nav-link">Student Corner <i data-lucide="chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#students?tab=pyq">PYQs (C20, C23, C26)</a></li>
+                        <li><a href="#students?tab=study">Study Materials</a></li>
+                        <li><a href="#students?tab=library">Library Resources</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#placements" class="nav-link">Career <i data-lucide="chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#placements?tab=stats">Placements Info</a></li>
+                        <li><a href="#placements?tab=recruiters">Recruiters</a></li>
+                        <li><a href="#alumni">Alumni Profiles</a></li>
+                        <li><a href="#alumni?tab=network">Alumni Network</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item theme-toggle-container">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <i data-lucide="sun" class="sun-icon"></i>
+                        <i data-lucide="moon" class="moon-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content App Wrapper -->
+    <main class="app-main" id="app-container">
+
+        <!-- ==================== PAGE: HOME ==================== -->
+        <section id="home" class="page-section active">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="tagline">
+                        <span class="pulse-dot"></span> ESTABLISHED 1956 • GOVT. POLYTECHNIC VISAKHAPATNAM
+                    </div>
+                    <h2>Forging the Future of <br><span class="highlight-text">Metallurgical Engineering</span></h2>
+                    <p class="lead-text">
+                        Welcome to the Department of Metallurgical Engineering at Government Polytechnic, Visakhapatnam.
+                        We empower diploma students with deep practical expertise in metals, casting, heat treatment,
+                        and mineral dressing.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#about" class="btn btn-primary">Explore Department</a>
+                        <a href="#labs" class="btn btn-secondary">Explore Laboratories</a>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>98%</h3>
+                            <p>Placement Rate</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>15+</h3>
+                            <p>State-of-Art Labs</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>INR 42L</h3>
+                            <p>Max CTC Offered</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>70 Yrs</h3>
+                            <p>College Legacy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Lattice Viewer Side -->
+                <div class="hero-visualizer">
+                    <div class="visualizer-container">
+                        <div class="visualizer-header">
+                            <div class="title-wrap">
+                                <h4>3D Crystal Lattice Visualizer</h4>
+                            </div>
+                            <div class="controls-pill">
+                                <button class="lattice-btn active" data-type="bcc">BCC</button>
+                                <button class="lattice-btn" data-type="fcc">FCC</button>
+                                <button class="lattice-btn" data-type="hcp">HCP</button>
+                            </div>
+                        </div>
+
+                        <!-- Three.js Canvas Container -->
+                        <div id="lattice-canvas-container">
+                            <!-- Canvas injected by JS -->
+                            <div class="lattice-loading">
+                                <div class="spinner"></div>
+                                <span>Initializing WebGL Engine...</span>
+                            </div>
+                        </div>
+
+                        <div class="visualizer-footer">
+                            <div class="structure-details">
+                                <span class="detail-label">Current Phase:</span>
+                                <span class="detail-val" id="phase-name">BCC Ferrite (α-Iron)</span>
+                            </div>
+                            <button class="btn-action" id="transform-trigger">
+                                <i data-lucide="thermometer"></i> Trigger Phase Change (912°C)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Details Sections -->
+            <div class="home-details-container">
+                <div class="detail-section">
+                    <div class="section-title">
+                        <h3>Our Unique Selling Proposition (USP)</h3>
+                    </div>
+                    <div class="usp-grid">
+                        <div class="usp-card">
+                            <div class="card-icon"><i data-lucide="cpu"></i></div>
+                            <h4>Advanced Computational Modeling</h4>
+                            <p>Leveraging state-of-the-art software like Thermo-Calc, Dictra, and molecular dynamics
+                                modeling packages to design alloys in silicon.</p>
+                        </div>
+                        <div class="usp-card">
+                            <div class="card-icon"><i data-lucide="layers"></i></div>
+                            <h4>Industry-Embedded Curriculum</h4>
+                            <p>Direct internships and research partnerships with core companies like Tata Steel, JSW,
+                                and AMNS ensure students are industry-ready.</p>
+                        </div>
+                        <div class="usp-card">
+                            <div class="card-icon"><i data-lucide="flask-conical"></i></div>
+                            <h4>Elite Micro-Characterization</h4>
+                            <p>Access to world-class atomic characterization tools, including SEM-EDS, XRD, and
+                                high-temperature furnace instrumentation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section split-layout">
+                    <div class="left-side">
+                        <div class="section-title">
+                            <h3>Vision & Mission</h3>
+                        </div>
+                        <div class="vision-mission">
+                            <div class="vm-block">
+                                <h4><i data-lucide="eye"></i> Vision</h4>
+                                <p>To be globally recognized as a premier center of learning and research in
+                                    metallurgical and materials engineering, nurturing innovators who address national
+                                    and global material requirements sustainably.</p>
+                            </div>
+                            <div class="vm-block">
+                                <h4><i data-lucide="target"></i> Mission</h4>
+                                <ul>
+                                    <li>Provide dynamic and rigorous academic programs aligned with modern materials
+                                        technologies.</li>
+                                    <li>Conduct cutting-edge research in metallurgy, nanotechnology, biomaterials, and
+                                        manufacturing.</li>
+                                    <li>Cultivate collaborative relationships with industries and research organizations
+                                        to foster technological growth.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="section-title">
+                            <h3>Department Highlights</h3>
+                        </div>
+                        <div class="timeline-highlights">
+                            <div class="tl-item">
+                                <div class="tl-marker">2025</div>
+                                <div class="tl-content">
+                                    <h5>DST-FIST Grant Phase II</h5>
+                                    <p>Acquired INR 3.5 Crore funding for Advanced Mechanical Alloy synthesis labs.</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-marker">2023</div>
+                                <div class="tl-content">
+                                    <h5>Patent for High Entropy Alloys</h5>
+                                    <p>Faculty patent granted for wear-resistant cobalt-free refractory superalloys.</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-marker">2021</div>
+                                <div class="tl-content">
+                                    <h5>International MIT Linkage</h5>
+                                    <p>Launched joint student exchange initiative for computational alloy modeling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: ABOUT US ==================== -->
+        <section id="about" class="page-section">
+            <div class="section-header">
+                <h2>About The Department & College</h2>
+                <p class="subtitle">Learn more about our heritage, objectives, and course provisions since 1956.</p>
+            </div>
+
+            <!-- Tabbed Interface for About -->
+            <div class="about-tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-target="about-department">The Department</button>
+                    <button class="tab-btn" data-target="about-college">The College</button>
+                    <button class="tab-btn" data-target="about-courses">Courses Offered</button>
+                    <button class="tab-btn" data-target="about-objectives">Objectives</button>
+                </div>
+
+                <div class="tab-content-wrapper">
+                    <!-- Tab: Department -->
+                    <div class="tab-pane active" id="about-department">
+                        <div class="pane-grid">
+                            <div class="pane-text">
+                                <h3>Decades of Professional Excellence</h3>
+                                <p>The Department of Metallurgical Engineering at Government Polytechnic, Visakhapatnam,
+                                    is dedicated to nurturing skilled metallurgical diploma engineers. The curriculum is
+                                    highly practical, focusing on hands-on lab experiments in mineral dressing, chemical
+                                    analysis, microstructures, heat treatments, and mechanical testing.</p>
+                                <p>Our students undergo intensive 6-month industrial internships, gaining real-world
+                                    experience at prestigious organizations such as Visakhapatnam Steel Plant (RINL),
+                                    ArcelorMittal Nippon Steel (AMNS), and regional foundry clusters. This
+                                    industry-embedded model gives our diploma holders an edge in core sector careers.
+                                </p>
+                                <div class="key-facts">
+                                    <div class="fact"><i data-lucide="calendar"></i> <span>Founded: 1956
+                                            (College)</span></div>
+                                    <div class="fact"><i data-lucide="users"></i> <span>Alumni: 1800+</span></div>
+                                    <div class="fact"><i data-lucide="award"></i> <span>State Board Approved
+                                            (SBTET)</span></div>
+                                </div>
+                            </div>
+                            <div class="pane-image">
+                                <div class="glass-visual-box">
+                                    <div class="glass-bg-mesh"></div>
+                                    <div class="visual-metrics">
+                                        <div class="metric"><span class="num">40+ Yrs</span><span class="lbl">Dept
+                                                Excellence</span></div>
+                                        <div class="metric"><span class="num">1200+</span><span class="lbl">Job
+                                                Placements</span></div>
+                                        <div class="metric"><span class="num">10+</span><span class="lbl">Modern Labs &
+                                                Shops</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: College -->
+                    <div class="tab-pane" id="about-college">
+                        <div class="pane-grid">
+                            <div class="pane-text">
+                                <h3>A Legacy of Technical Education</h3>
+                                <p>Government Polytechnic, Visakhapatnam, established in 1956, is one of the oldest and
+                                    most prestigious technical education institutions in the state of Andhra Pradesh.
+                                    Operating under the Department of Technical Education, AP, it offers high-quality
+                                    diploma programs to meet the booming industrial demand of the region.</p>
+                                <p>Located in the heart of the steel city of Visakhapatnam, the campus provides easy
+                                    access to major manufacturing hubs. The college hosts standard classrooms, large
+                                    machine shops, student recreation areas, and is adjacent to major transport
+                                    corridors, making it a hub for student learning.</p>
+                            </div>
+                            <div class="pane-image">
+                                <div class="college-stats-panel">
+                                    <div class="c-stat"><span>SBTET Code</span><strong>009</strong></div>
+                                    <div class="c-stat"><span>Campus Size</span><strong>42 Acres</strong></div>
+                                    <div class="c-stat"><span>Placement Ratio</span><strong>92% Avg</strong></div>
+                                </div>
+                                <!-- Embedded Google Maps with map pointer -->
+                                <div class="map-container-wrap">
+                                    <h4>Campus Location Map</h4>
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=37-12-14,%20plot%20no-27%20NGGO's%20Colony,%20Madhavadhara,%20Visakhapatnam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                        width="100%" height="180"
+                                        style="border:0; border-radius:8px; filter: invert(90%) hue-rotate(180deg) opacity(0.85); margin-top: 10px;"
+                                        allowfullscreen="" loading="lazy"></iframe>
+                                    <a href="https://maps.app.goo.gl/khrjxveX3cQFQwKY9" target="_blank"
+                                        class="btn btn-secondary btn-sm btn-block"
+                                        style="margin-top:10px; font-size: 0.78rem; padding: 8px;"><i
+                                            data-lucide="map-pin"></i> Open in Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Courses -->
+                    <div class="tab-pane" id="about-courses">
+                        <h3>Our Academic Programs</h3>
+                        <p class="section-desc">We offer State Board approved technical diploma courses, incorporating
+                            rigorous classroom lectures, advanced lab experiments, and mandatory industrial training.
+                        </p>
+                        <div class="courses-grid">
+                            <div class="course-card">
+                                <div class="course-badge">Diploma Program</div>
+                                <h4>Diploma in Metallurgical Engineering</h4>
+                                <span class="duration"><i data-lucide="clock"></i> 3 Years (6 Semesters)</span>
+                                <p>Covers fundamental principles of mineral dressing, iron and steel production,
+                                    physical metallurgy, heat treatment, and foundry technology.</p>
+                                <ul class="curriculum-bullets">
+                                    <li>Mineral Dressing & Coal Preparation</li>
+                                    <li>Physical Metallurgy & Metallography</li>
+                                    <li>Mechanical Testing of Materials</li>
+                                    <li>Iron & Steel Making Technology</li>
+                                </ul>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-badge">Industrial Practice</div>
+                                <h4>Mandatory Industrial Training</h4>
+                                <span class="duration"><i data-lucide="clock"></i> 6 Months (5th Semester)</span>
+                                <p>Comprehensive shop-floor training at prime steel plants and metallurgical extraction
+                                    industries, ensuring practical competency.</p>
+                                <ul class="curriculum-bullets">
+                                    <li>Steel Plant shop floor training</li>
+                                    <li>Quality Control & Testing Labs</li>
+                                    <li>Non-Ferrous Extraction plants</li>
+                                    <li>Industrial Safety standards</li>
+                                </ul>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-badge">Continuing Ed</div>
+                                <h4>Specialized Skill Certifications</h4>
+                                <span class="duration"><i data-lucide="clock"></i> Flexible Schedule</span>
+                                <p>Add-on vocational certification modules to enhance employability in welding quality
+                                    control, inspection, and non-destructive testing.</p>
+                                <ul class="curriculum-bullets">
+                                    <li>Non-Destructive Testing (NDT Level II)</li>
+                                    <li>Autocad Drafting & Drawing</li>
+                                    <li>Advanced Welding metallurgy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Objectives -->
+                    <div class="tab-pane" id="about-objectives">
+                        <div class="objectives-container">
+                            <h3>Program Educational Objectives (PEOs)</h3>
+                            <div class="peo-list">
+                                <div class="peo-item">
+                                    <div class="peo-num">01</div>
+                                    <div class="peo-text">
+                                        <h4>Technical Competency</h4>
+                                        <p>To produce graduates with a strong foundation in physics, chemistry, and
+                                            metallurgical principles capable of analyzing and designing complex
+                                            materials systems.</p>
+                                    </div>
+                                </div>
+                                <div class="peo-item">
+                                    <div class="peo-num">02</div>
+                                    <div class="peo-text">
+                                        <h4>Research & Innovation</h4>
+                                        <p>To encourage graduates to pursue advanced research, design breakthrough
+                                            structural materials, and register intellectual properties that solve
+                                            real-world problems.</p>
+                                    </div>
+                                </div>
+                                <div class="peo-item">
+                                    <div class="peo-num">03</div>
+                                    <div class="peo-text">
+                                        <h4>Professional & Ethical Leadership</h4>
+                                        <p>To cultivate leadership qualities, communications skills, and an ethical
+                                            approach to metallurgical extraction, focusing on recycling, sustainability,
+                                            and carbon footprint reduction.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: FACULTY / STAFF ==================== -->
+        <section id="faculty" class="page-section">
+            <div class="section-header">
+                <h2>Our Faculty & Staff</h2>
+                <p class="subtitle">Meet our team of world-class educators, active researchers, and academic mentors.
+                </p>
+            </div>
+
+            <div class="faculty-grid">
+                <!-- Principal Card -->
+                <div class="faculty-card leader-card" id="principal-profile">
+                    <div class="f-image-wrap">
+                        <div class="f-avatar"><i data-lucide="user"></i></div>
+                        <div class="badge-tag">Principal</div>
+                    </div>
+                    <div class="f-info">
+                        <h3>Dr. Devendra S. Sharma</h3>
+                        <p class="qualifications">Ph.D. in Physical Metallurgy (IIT Madras), Post-Doc (IISc Bangalore)
+                        </p>
+                        <p class="specialization"><strong>Specialization:</strong> Shape Memory Alloys & Superalloys</p>
+                        <p class="exp"><strong>Experience:</strong> 28 Years in Teaching & Research</p>
+                        <div class="achievements-box">
+                            <h5>Key Achievements</h5>
+                            <ul>
+                                <li>Awarded "Best Educator of the State" in 2022.</li>
+                                <li>Published 120+ articles in peer-reviewed journals.</li>
+                                <li>Pioneered shape memory alloy implants for biomedical applications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOD Card -->
+                <div class="faculty-card leader-card" id="hod-profile">
+                    <div class="f-image-wrap">
+                        <div class="f-avatar"><i data-lucide="user"></i></div>
+                        <div class="badge-tag">HOD</div>
+                    </div>
+                    <div class="f-info">
+                        <h3>Dr. Anindya R. Sengupta</h3>
+                        <p class="qualifications">Ph.D. in Extractive Metallurgy (IIT Kharagpur), M.Tech (IIT Bombay)
+                        </p>
+                        <p class="specialization"><strong>Specialization:</strong> Pyrometallurgy & Blast Furnace
+                            Reaction Kinetics</p>
+                        <p class="exp"><strong>Experience:</strong> 22 Years</p>
+                        <div class="achievements-box">
+                            <h5>Key Achievements</h5>
+                            <ul>
+                                <li>National Metallurgist Award Recipient.</li>
+                                <li>Principal Investigator for DST-SERB funded green steel project.</li>
+                                <li>Consultant for Tata Steel & JSW research R&D divisions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faculty Member 1 -->
+                <div class="faculty-card">
+                    <div class="f-image-wrap">
+                        <div class="f-avatar"><i data-lucide="user"></i></div>
+                        <div class="badge-tag">Professor</div>
+                    </div>
+                    <div class="f-info">
+                        <h3>Dr. Rajesh K. Varma</h3>
+                        <p class="qualifications">Ph.D. (IISc Bangalore), M.Tech (BHU-IIT)</p>
+                        <p class="specialization"><strong>Specialization:</strong> Powder Metallurgy & Sintered
+                            Materials</p>
+                        <div class="achievements-box">
+                            <h5>Key Achievements</h5>
+                            <ul>
+                                <li>Patented high-density tungsten armor plates.</li>
+                                <li>Developed industrial sintering cycles that save 15% energy.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faculty Member 2 -->
+                <div class="faculty-card">
+                    <div class="f-image-wrap">
+                        <div class="f-avatar"><i data-lucide="user"></i></div>
+                        <div class="badge-tag">Associate Professor</div>
+                    </div>
+                    <div class="f-info">
+                        <h3>Dr. Meera G. Nair</h3>
+                        <p class="qualifications">Ph.D. (IIT Delhi), B.Tech (NIT Trichy)</p>
+                        <p class="specialization"><strong>Specialization:</strong> Electrochemistry & Corrosion
+                            Engineering</p>
+                        <div class="achievements-box">
+                            <h5>Key Achievements</h5>
+                            <ul>
+                                <li>Industrial project consultant for marine pipeline coating analysis.</li>
+                                <li>Recipient of Young Scientist Award in Surface Science.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faculty Member 3 -->
+                <div class="faculty-card">
+                    <div class="f-image-wrap">
+                        <div class="f-avatar"><i data-lucide="user"></i></div>
+                        <div class="badge-tag">Assistant Professor</div>
+                    </div>
+                    <div class="f-info">
+                        <h3>Dr. Siddharth Sen</h3>
+                        <p class="qualifications">Ph.D. (IIT Kanpur), M.Tech (NIT Rourkela)</p>
+                        <p class="specialization"><strong>Specialization:</strong> Computational Materials Engineering &
+                            Phase Field Modeling</p>
+                        <div class="achievements-box">
+                            <h5>Key Achievements</h5>
+                            <ul>
+                                <li>Open-source developer for alloy thermodynamic simulation modules.</li>
+                                <li>Author of the widely read "Fundamentals of Lattice Thermodynamics".</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: LABORATORIES ==================== -->
+        <section id="labs" class="page-section">
+            <div class="section-header">
+                <h2>Laboratory Infrastructure</h2>
+                <p class="subtitle">Equipped with state-of-the-art instruments representing advanced research and
+                    testing capabilities.</p>
+            </div>
+
+            <div class="labs-container-wrapper">
+                <!-- Lab Nav Buttons -->
+                <div class="labs-selector">
+                    <button class="lab-select-btn active" data-lab="1">
+                        <span class="num">01</span>
+                        <span class="lbl">Physical Metallurgy & Metallography</span>
+                    </button>
+                    <button class="lab-select-btn" data-lab="2">
+                        <span class="num">02</span>
+                        <span class="lbl">Mechanical Testing Lab</span>
+                    </button>
+                    <button class="lab-select-btn" data-lab="3">
+                        <span class="num">03</span>
+                        <span class="lbl">Heat Treatment & Pyrometallurgical</span>
+                    </button>
+                    <button class="lab-select-btn" data-lab="4">
+                        <span class="num">04</span>
+                        <span class="lbl">Advanced Characterization (SEM/XRD)</span>
+                    </button>
+                </div>
+
+                <!-- Lab Content Panels -->
+                <div class="lab-panes">
+                    <!-- LAB 1 -->
+                    <div class="lab-pane active" id="lab-1">
+                        <div class="lab-info-grid">
+                            <div class="lab-desc">
+                                <h3>Physical Metallurgy & Metallography Laboratory</h3>
+                                <p>This laboratory is dedicated to preparing metallic specimens and revealing their
+                                    internal microstructures. Students learn to cut, mount, grind, polish, and
+                                    chemically etch specimens to identify phases, grain sizes, grain boundaries, and
+                                    metallurgical defects.</p>
+
+                                <h4>Equipment Details</h4>
+                                <ul class="equip-list">
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Specimen Cutting Machine:</strong>
+                                        Diamond saw precision cutter.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Bakelite Mounting Press:</strong>
+                                        High pressure hot compression unit.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Polishing Disc Machines:</strong>
+                                        Double-disc variable speed polishing units.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Optical Microscopes:</strong>
+                                        Equipped with high resolution image analyzing software.</li>
+                                </ul>
+                            </div>
+                            <div class="lab-extra">
+                                <div class="glass-subpanel">
+                                    <h4>Records & Activities</h4>
+                                    <p>Conducts over 12 academic experiments per semester, including ASTM grain size
+                                        estimation, cold-working vs annealing analysis, and inclusion rating of steel
+                                        samples.</p>
+                                </div>
+                                <div class="interactive-demo-card">
+                                    <h4>Lattice Microstructure Demo</h4>
+                                    <p class="small-text">Simulate metallurgical etching of Carbon Steel (0.4% C):</p>
+                                    <div class="etch-sim-box">
+                                        <div class="steel-specimen" id="steel-specimen">
+                                            <div class="phase ferrite">Ferrite</div>
+                                            <div class="phase pearlite">Pearlite</div>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm" id="btn-etch">Apply Etchant (Nital
+                                            2%)</button>
+                                        <p class="etch-status" id="etch-status">Specimen is polished (mirror-like).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LAB 2 -->
+                    <div class="lab-pane" id="lab-2">
+                        <div class="lab-info-grid">
+                            <div class="lab-desc">
+                                <h3>Mechanical Testing Laboratory</h3>
+                                <p>In this lab, material mechanical properties are evaluated. Students perform tensile,
+                                    compressive, shear, impact, hardness, fatigue, and creep testing, linking raw
+                                    mechanical data to core physical microstructures.</p>
+
+                                <h4>Equipment Details</h4>
+                                <ul class="equip-list">
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Universal Testing Machine
+                                            (UTM):</strong> 100 kN electronic load frame.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Hardness Testers:</strong>
+                                        Rockwell, Brinell, and Vickers hardness setups.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Charpy/Izod Impact
+                                            Machine:</strong> Pendulum impact tester for toughness.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Rotary Fatigue Tester:</strong>
+                                        Cyclic stress failure analyzer.</li>
+                                </ul>
+                            </div>
+                            <div class="lab-extra">
+                                <div class="glass-subpanel">
+                                    <h4>Experiment Videos & Records</h4>
+                                    <p>Access digitized experiment procedures and instructional video catalogs for
+                                        stress-strain curves, tensile elongation, and brittle-ductile transition
+                                        temperature testing.</p>
+                                </div>
+                                <div class="interactive-demo-card">
+                                    <h4>UTM Tensile Simulation</h4>
+                                    <p class="small-text">Select material and run tensile load test:</p>
+                                    <div class="utm-sim-box">
+                                        <div class="utm-controls">
+                                            <select id="utm-material">
+                                                <option value="mild-steel">Mild Steel (High Ductility)</option>
+                                                <option value="cast-iron">Grey Cast Iron (Brittle)</option>
+                                                <option value="aluminum">Aluminum Alloy</option>
+                                            </select>
+                                            <button class="btn btn-primary btn-sm" id="btn-utm-test">Pull
+                                                Sample</button>
+                                        </div>
+                                        <div class="graph-canvas-wrap">
+                                            <canvas id="utm-graph" width="200" height="110"></canvas>
+                                        </div>
+                                        <p class="utm-status" id="utm-status">Ready for test.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LAB 3 -->
+                    <div class="lab-pane" id="lab-3">
+                        <div class="lab-info-grid">
+                            <div class="lab-desc">
+                                <h3>Heat Treatment & Pyrometallurgical Laboratory</h3>
+                                <p>Students explore structural adjustments driven by heat. Thermal cycles of annealing,
+                                    normalizing, quenching, and tempering are carried out in high-temperature muffle and
+                                    tubular furnaces.</p>
+
+                                <h4>Equipment Details</h4>
+                                <ul class="equip-list">
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Muffle Furnaces:</strong> Operates
+                                        up to 1200°C with digital programmers.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Jominy End Quench Setup:</strong>
+                                        Hardness profile assessment for steel alloys.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Salt Bath Furnace:</strong>
+                                        Isothermal annealing and heat transfers.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Sand Permeability Tester:</strong>
+                                        Sand casting design evaluation.</li>
+                                </ul>
+                            </div>
+                            <div class="lab-extra">
+                                <div class="glass-subpanel">
+                                    <h4>Safety & Operations</h4>
+                                    <p>Safety training is compulsory. The facility features comprehensive thermal PPE,
+                                        advanced overhead exhaust vents, gas sensor shields, and digital cooling setups.
+                                    </p>
+                                </div>
+                                <div class="interactive-demo-card">
+                                    <h4>Jominy Hardenability Simulator</h4>
+                                    <p class="small-text">Quench steel specimen and test hardness along length:</p>
+                                    <div class="jominy-sim-box">
+                                        <div class="quench-visual" id="jominy-specimen"></div>
+                                        <div class="jominy-controls">
+                                            <button class="btn btn-primary btn-sm" id="btn-quench">Quench
+                                                Specimen</button>
+                                            <button class="btn btn-secondary btn-sm" id="btn-hardness-profile"
+                                                disabled>Measure Hardness</button>
+                                        </div>
+                                        <div class="jominy-results" id="jominy-results"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LAB 4 -->
+                    <div class="lab-pane" id="lab-4">
+                        <div class="lab-info-grid">
+                            <div class="lab-desc">
+                                <h3>Advanced Characterization Laboratory</h3>
+                                <p>Supporting postgraduate studies and Ph.D. research projects, this lab contains
+                                    equipment for resolving atomic arrays and nanoscale topography.</p>
+
+                                <h4>Equipment Details</h4>
+                                <ul class="equip-list">
+                                    <li><i data-lucide="check-circle-2"></i> <strong>X-Ray Diffractometer
+                                            (XRD):</strong> Resolves lattice structures and crystallite sizes.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Scanning Electron Microscope
+                                            (SEM):</strong> Topography resolving with EDS chemical microanalysis.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>Microhardness Tester:</strong>
+                                        Vickers indentation profiling for micro-scale components.</li>
+                                    <li><i data-lucide="check-circle-2"></i> <strong>High-Energy Planetary Ball
+                                            Mill:</strong> Powder synthesis and solid-state alloy formulation.</li>
+                                </ul>
+                            </div>
+                            <div class="lab-extra">
+                                <div class="glass-subpanel">
+                                    <h4>Research Access & Publications</h4>
+                                    <p>Maintains links to domestic research platforms, supporting scientific
+                                        publications in renowned databases like Elsevier, Springer, and Taylor &
+                                        Francis.</p>
+                                </div>
+                                <div class="interactive-demo-card">
+                                    <h4>XRD Diffractogram Simulator</h4>
+                                    <p class="small-text">Select Crystal Lattice structure to generate scan:</p>
+                                    <div class="xrd-sim-box">
+                                        <div class="xrd-controls">
+                                            <button class="btn btn-primary btn-sm btn-xrd" data-crystal="fcc">FCC
+                                                (Austenite)</button>
+                                            <button class="btn btn-primary btn-sm btn-xrd" data-crystal="bcc">BCC
+                                                (Ferrite)</button>
+                                        </div>
+                                        <div class="graph-canvas-wrap">
+                                            <canvas id="xrd-graph" width="200" height="95"></canvas>
+                                        </div>
+                                        <p class="xrd-status" id="xrd-status">Select structure to scan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: STUDENT CORNER ==================== -->
+        <section id="students" class="page-section">
+            <div class="section-header">
+                <h2>Student Corner</h2>
+                <p class="subtitle">Access educational downloads, study resources, reference books, and past exam
+                    schedules.</p>
+            </div>
+
+            <div class="student-tabs-wrapper">
+                <div class="student-sidebar">
+                    <button class="student-tab-btn active" data-pane="student-pyq">
+                        <i data-lucide="file-text"></i> Previous Year Questions (PYQs)
+                    </button>
+                    <button class="student-tab-btn" data-pane="student-study">
+                        <i data-lucide="book-open"></i> Study Materials & E-Notes
+                    </button>
+                    <button class="student-tab-btn" data-pane="student-library">
+                        <i data-lucide="library"></i> Library Resources
+                    </button>
+                </div>
+
+                <div class="student-content">
+                    <!-- Pane: PYQs -->
+                    <div class="student-pane active" id="student-pyq">
+                        <h3>Previous Year Questions (PYQs)</h3>
+                        <p class="desc">Download syllabus catalogs and exam question sets categorized by academic code
+                            regulation schemas.</p>
+
+                        <div class="pyq-grid">
+                            <div class="pyq-card">
+                                <div class="pyq-header">
+                                    <span class="regulation-tag">Regulation C20</span>
+                                    <h4>Semester III - VI Questions</h4>
+                                </div>
+                                <ul class="download-list">
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Physical
+                                            Metallurgy (C20-302)</a></li>
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Extractive
+                                            Metallurgy (C20-403)</a></li>
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Mechanical
+                                            Testing Lab Manual</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="pyq-card">
+                                <div class="pyq-header">
+                                    <span class="regulation-tag">Regulation C23</span>
+                                    <h4>Semester I - IV Questions</h4>
+                                </div>
+                                <ul class="download-list">
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Engineering
+                                            Materials (C23-104)</a></li>
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Mineral
+                                            Dressing (C23-301)</a></li>
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Steel Making
+                                            Technology (C23-402)</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="pyq-card">
+                                <div class="pyq-header">
+                                    <span class="regulation-tag">Regulation C26 (Latest)</span>
+                                    <h4>Semester I - II Core Questions</h4>
+                                </div>
+                                <ul class="download-list">
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Introduction to
+                                            Materials Science</a></li>
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Materials
+                                            Chemistry syllabus</a></li>
+                                    <li><a href="#" class="mock-download"><i data-lucide="download"></i> Computing in
+                                            Materials Science</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pane: Study Materials -->
+                    <div class="student-pane" id="student-study">
+                        <h3>Study Materials & Digital E-Notes</h3>
+                        <p class="desc">Quick-access reference links and lecture notes authored by departmental faculty
+                            members.</p>
+
+                        <div class="notes-grid">
+                            <div class="note-card">
+                                <div class="card-icon"><i data-lucide="image"></i></div>
+                                <h4>Iron-Carbon Phase Diagram Guide</h4>
+                                <p>Detailed microstructural transitions from Liquid, Austenite, Ferrite, Cementite to
+                                    Pearlite and Ledeburite.</p>
+                                <a href="#" class="btn btn-secondary btn-sm mock-download"><i data-lucide="file"></i>
+                                    PDF Document (4.2 MB)</a>
+                            </div>
+
+                            <div class="note-card">
+                                <div class="card-icon"><i data-lucide="activity"></i></div>
+                                <h4>Hardenability & Quenching Kinetics</h4>
+                                <p>Analysis notes covering Jominy end quench mechanisms, TTT/CCT curves, and martensitic
+                                    transformations.</p>
+                                <a href="#" class="btn btn-secondary btn-sm mock-download"><i data-lucide="file"></i>
+                                    PDF Document (3.1 MB)</a>
+                            </div>
+
+                            <div class="note-card">
+                                <div class="card-icon"><i data-lucide="database"></i></div>
+                                <h4>Extraction of Non-Ferrous Metals</h4>
+                                <p>Covers technical processes of extracting Aluminum (Hall-Héroult), Copper
+                                    (smelting/refining), and Zinc.</p>
+                                <a href="#" class="btn btn-secondary btn-sm mock-download"><i data-lucide="file"></i>
+                                    PDF Document (5.8 MB)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pane: Library Resources -->
+                    <div class="student-pane" id="student-library">
+                        <h3>Departmental Library & E-Journals</h3>
+                        <p class="desc">A specialized collection containing standard academic textbook editions and
+                            online metallurgical databases.</p>
+
+                        <div class="library-split">
+                            <div class="lib-books">
+                                <h4>Essential Textbook Reserves</h4>
+                                <ul class="book-list">
+                                    <li>
+                                        <strong>"Physical Metallurgy Principles"</strong>
+                                        <span>Robert E. Reed-Hill, Reza Abbaschian</span>
+                                    </li>
+                                    <li>
+                                        <strong>"Materials Science and Engineering: An Introduction"</strong>
+                                        <span>William D. Callister, David G. Rethwisch</span>
+                                    </li>
+                                    <li>
+                                        <strong>"Introduction to the Thermodynamics of Materials"</strong>
+                                        <span>David R. Gaskell</span>
+                                    </li>
+                                    <li>
+                                        <strong>"Principles of Extractive Metallurgy"</strong>
+                                        <span>Fathi Habashi</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="lib-journals">
+                                <h4>Subscribed E-Journals & Platforms</h4>
+                                <div class="journals-grid">
+                                    <a href="https://www.sciencedirect.com" target="_blank" class="journal-link">
+                                        <i data-lucide="external-link"></i>
+                                        <strong>Acta Materialia</strong>
+                                        <span>Elsevier</span>
+                                    </a>
+                                    <a href="https://link.springer.com" target="_blank" class="journal-link">
+                                        <i data-lucide="external-link"></i>
+                                        <strong>Metallurgical and Materials Transactions A</strong>
+                                        <span>Springer / ASM</span>
+                                    </a>
+                                    <a href="https://www.tms.org" target="_blank" class="journal-link">
+                                        <i data-lucide="external-link"></i>
+                                        <strong>JOM Journal</strong>
+                                        <span>The Minerals, Metals & Materials Society</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: PLACEMENTS ==================== -->
+        <section id="placements" class="page-section">
+            <div class="section-header">
+                <h2>Placements & Careers</h2>
+                <p class="subtitle">Connecting our students with top-tier metals, alloys, and automotive corporations
+                    worldwide.</p>
+            </div>
+
+            <!-- Placements Tabs -->
+            <div class="placements-tabs">
+                <div class="placement-tab-buttons">
+                    <button class="p-tab-btn active" data-target="p-stats">Placement Stats</button>
+                    <button class="p-tab-btn" data-target="p-recruiters">Our Recruiters</button>
+                    <button class="p-tab-btn" data-target="p-stories">Success Stories</button>
+                </div>
+
+                <div class="placement-tab-content">
+                    <!-- Stats Pane -->
+                    <div class="p-pane active" id="p-stats">
+                        <div class="p-stats-grid">
+                            <div class="p-stat-card">
+                                <div class="circle-chart" style="--percent: 98;">
+                                    <svg viewBox="0 0 36 36" class="circular-html-chart">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke-dasharray="98, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <text x="18" y="20.35" class="percentage">98%</text>
+                                    </svg>
+                                </div>
+                                <h4>Placement Percentage</h4>
+                                <p>Consistent high placements in core steel, aluminum, manufacturing, and research
+                                    fields.</p>
+                            </div>
+
+                            <div class="p-stat-card">
+                                <div class="stat-value">INR 42 LPA</div>
+                                <h4>Highest Package</h4>
+                                <p>Offered by premium engineering R&D labs and international tech firms.</p>
+                            </div>
+
+                            <div class="p-stat-card">
+                                <div class="stat-value">INR 9.6 LPA</div>
+                                <h4>Average Package</h4>
+                                <p>One of the highest core branch averages among regional technical institutes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recruiters Pane -->
+                    <div class="p-pane" id="p-recruiters">
+                        <p class="recruiter-intro">We are proud to see our students placed in top industrial firms and
+                            core metallurgical corporations.</p>
+                        <div class="recruiter-logos-grid">
+                            <div class="recruiter-logo-card">
+                                <div class="logo-placeholder">TATA STEEL</div>
+                                <h5>Tata Steel Ltd.</h5>
+                                <p>Core Steel Production & Research</p>
+                            </div>
+                            <div class="recruiter-logo-card">
+                                <div class="logo-placeholder">AMNS</div>
+                                <h5>ArcelorMittal Nippon Steel</h5>
+                                <p>Global Steel Manufacturing Joint Venture</p>
+                            </div>
+                            <div class="recruiter-logo-card">
+                                <div class="logo-placeholder">VEDANTA</div>
+                                <h5>Vedanta Resources</h5>
+                                <p>Non-Ferrous Mining & Smelting</p>
+                            </div>
+                            <div class="recruiter-logo-card">
+                                <div class="logo-placeholder">ABM</div>
+                                <h5>Aditya Birla Minerals</h5>
+                                <p>Copper & Specialty Alloys</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stories Pane -->
+                    <div class="p-pane" id="p-stories">
+                        <div class="stories-grid">
+                            <div class="story-card">
+                                <div class="quote-icon"><i data-lucide="quote"></i></div>
+                                <p>"The laboratory training, especially XRD micro-characterization and heat treatment
+                                    practices, gave me an immense edge during my technical interviews at Tata Steel R&D.
+                                    The faculty guides you at every single step."</p>
+                                <div class="story-author">
+                                    <strong>Vikram Malhotra</strong>
+                                    <span>Graduate of 2024, Assistant Manager, Tata Steel</span>
+                                </div>
+                            </div>
+                            <div class="story-card">
+                                <div class="quote-icon"><i data-lucide="quote"></i></div>
+                                <p>"Thanks to the computational materials engineering elective and modeling labs, I was
+                                    selected by AMNS for a specialized digital-twin development team. Metallurgy is no
+                                    longer just hot furnaces; it's advanced tech."</p>
+                                <div class="story-author">
+                                    <strong>Ananya Hegde</strong>
+                                    <span>Graduate of 2024, Process Design Engineer, AMNS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: ALUMNI ==================== -->
+        <section id="alumni" class="page-section">
+            <div class="section-header">
+                <h2>Alumni Network</h2>
+                <p class="subtitle">Our global network of former students working in top corporations, academic
+                    institutions, and space research labs.</p>
+            </div>
+
+            <div class="alumni-wrapper">
+                <div class="alumni-highlights-grid">
+                    <div class="alumni-profile-card">
+                        <div class="a-avatar"><i data-lucide="user"></i></div>
+                        <h4>Dr. Ramesh J. Kothari</h4>
+                        <span class="batch">Batch of 1988</span>
+                        <span class="role">Chief Technical Officer (CTO), Vedanta Aluminium</span>
+                        <p>Over 32 years of metallurgical process experience. Awarded the Life Time Achievement award in
+                            non-ferrous extraction methodologies.</p>
+                    </div>
+
+                    <div class="alumni-profile-card">
+                        <div class="a-avatar"><i data-lucide="user"></i></div>
+                        <h4>Dr. Preeti C. Sen</h4>
+                        <span class="batch">Batch of 2005</span>
+                        <span class="role">Associate Professor, Materials Science, MIT (USA)</span>
+                        <p>Pioneering researcher in structural amorphous metals (metallic glasses) and atomistic phase
+                            transformation simulations.</p>
+                    </div>
+
+                    <div class="alumni-profile-card">
+                        <div class="a-avatar"><i data-lucide="user"></i></div>
+                        <h4>Sanjay V. Deshmukh</h4>
+                        <span class="batch">Batch of 2012</span>
+                        <span class="role">Senior Scientist, Vikram Sarabhai Space Centre (ISRO)</span>
+                        <p>Developed lightweight nickel-chromium superalloys and heat shields for satellite launch
+                            vehicle nozzles.</p>
+                    </div>
+                </div>
+
+                <div class="alumni-join-banner">
+                    <div class="banner-text">
+                        <h3>Stay Connected globally</h3>
+                        <p>Are you an alumnus? Join our WhatsApp network group, register in our alumni directory, and
+                            mentor the next generation of materials engineers.</p>
+                    </div>
+                    <div class="banner-actions">
+                        <a href="https://chat.whatsapp.com/mock-link" target="_blank" class="btn btn-primary"><i
+                                data-lucide="phone"></i> Join WhatsApp Group</a>
+                        <a href="#contact" class="btn btn-secondary">Submit Alumni Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE: CONTACT & FEEDBACK ==================== -->
+        <section id="contact" class="page-section">
+            <div class="section-header">
+                <h2>Contact & Feedback Form</h2>
+                <p class="subtitle">Reach out to the department administration office or submit your feedback/queries.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact info panel -->
+                <div class="contact-info-panel">
+                    <h3>Administrative Contacts</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="map-pin"></i></div>
+                        <div class="info-text">
+                            <strong>Department Address</strong>
+                            <p>Department of Metallurgical Engineering,<br>Government Polytechnic campus, Kancharapalem
+                                Area,<br>37-12-14, plot no-27 NGGO's Colony, Madhavadhara, Visakhapatnam, Andhra Pradesh
+                                530007.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="phone-call"></i></div>
+                        <div class="info-text">
+                            <strong>Phone Number (Admin Office)</strong>
+                            <p>+91 (0891) 255-8910 / +91 (0891) 255-1234</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="mail"></i></div>
+                        <div class="info-text">
+                            <strong>Official Email Addresses</strong>
+                            <p>gptvspmetl@gmail.com<br>office.gptvsp@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="clock"></i></div>
+                        <div class="info-text">
+                            <strong>Office Working Hours</strong>
+                            <p>Monday – Saturday: 9:30 AM – 4:30 PM<br>Closed on Sundays</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="feedback-form-panel">
+                    <h3>Send Us a Message</h3>
+                    <form id="feedback-form">
+                        <div class="form-row-two">
+                            <div class="form-group">
+                                <label for="form-name">Your Full Name <span class="required">*</span></label>
+                                <input type="text" id="form-name" required placeholder="e.g., John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Your Email Address <span class="required">*</span></label>
+                                <input type="email" id="form-email" required placeholder="e.g., john.doe@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row-two">
+                            <div class="form-group">
+                                <label for="form-role">Category <span class="required">*</span></label>
+                                <select id="form-role" required>
+                                    <option value="" disabled selected>Select Category...</option>
+                                    <option value="student">Current Student</option>
+                                    <option value="alumni">Alumnus / Alumna</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="recruiter">Recruiter / Industry Expert</option>
+                                    <option value="other">General Query</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Subject <span class="required">*</span></label>
+                                <input type="text" id="form-subject" required placeholder="e.g., Admission Query">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">Message / Feedback Details <span class="required">*</span></label>
+                            <textarea id="form-message" rows="5" required
+                                placeholder="Describe your query or feedback in detail..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">
+                            <i data-lucide="send"></i> Submit Message
+                        </button>
+                    </form>
+
+                    <!-- Form Success Alert -->
+                    <div class="success-overlay" id="form-success">
+                        <div class="success-card">
+                            <div class="success-icon"><i data-lucide="check-circle"></i></div>
+                            <h4>Message Submitted Successfully!</h4>
+                            <p>Thank you for reaching out. The department administration office will respond to your
+                                query shortly.</p>
+                            <button class="btn btn-primary btn-sm" id="btn-success-close">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News & Events Section included at bottom of Contact/Home for rich footer context -->
+            <div class="news-events-section">
+                <div class="section-title">
+                    <h3>Recent News & Upcoming Events</h3>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <span class="news-date">June 12, 2026</span>
+                        <h4>Workshop on Electron Backscatter Diffraction (EBSD)</h4>
+                        <p>A 3-day technical seminar introducing students and research scholars to lattice crystal
+                            orientation indexing using SEM instrumentation.</p>
+                    </div>
+                    <div class="news-card">
+                        <span class="news-date">May 28, 2026</span>
+                        <h4>Industrial Visit to AMNS Hazira Facility</h4>
+                        <p>Our undergraduate pre-final year students completed an extensive process tour studying direct
+                            reduced iron (DRI) processes and hot strip rolling mills.</p>
+                    </div>
+                    <div class="news-card">
+                        <span class="news-date">May 15, 2026</span>
+                        <h4>Guest Lecture: Alloys for High-Hydrogen Furnaces</h4>
+                        <p>Dr. Werner Kley from Max Planck Institute delivered a seminar analyzing creep-resistant tubes
+                            for high-temperature hydrogen combustion cycles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Department of Metallurgical Engineering, Government Polytechnic, Visakhapatnam. All Rights
+                Reserved.</p>
+            <p class="design-credit">Engineered for Technical & Metallurgical Excellence</p>
+        </div>
+    </footer>
+
+    <!-- App Scripts -->
+    <script src="webgl-bg.js"></script>
+    <script src="webgl-lattice.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
